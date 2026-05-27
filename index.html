@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ÁLBUM DE FOTOS</title>
     
-    <!-- Enlaces y configuraciones para que funcione como App en Android (PWA) -->
     <link class="manifest" rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#000000">
 
@@ -18,7 +17,6 @@
         }
     </script>
     
-    <!-- Cargamos la librería Three.js para la animación del universo de fondo -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
     <style>
@@ -130,7 +128,7 @@
             50% { opacity: 1; transform: scale(1.3); }
         }
 
-        /* --- VENTANA MODAL (TARJETA DE RECUERDO) --- */
+        /* --- VENTANA MODAL (TARJETA DE RECUERDO RE-DISEÑADA PARA IPHONE) --- */
         #modal-recuerdo {
             position: fixed;
             top: 50%;
@@ -160,17 +158,21 @@
 
         .contenedor-foto {
             width: 100%;
-            height: 220px;
+            height: 340px; /* Mayor altura vertical para fotos alargadas de iPhone */
             border-radius: 10px;
             overflow: hidden;
             margin-bottom: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 74, 125, 0.2);
+            background-color: #000000; /* Fondo negro para rellenar los bordes laterales */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .contenedor-foto img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* ¡CORREGIDO! Muestra la foto entera sin recortar nada */
         }
 
         .texto-recuerdo {
@@ -222,7 +224,6 @@
 
     <script>
         // --- CONFIGURACIÓN DE TUS PUNTOS DE RECUERDO ---
-        // Estrellas alineadas en la parte superior (top: 15% - 25%) con gran visibilidad y brillo
         const recuerdos = [
             {
                 texto: "Como la vida es tan increíble, que me permitió conocerte, te amo con todo mi corazón. <3",
@@ -246,7 +247,7 @@
                 tamano: "12px"
             },
             {
-                texto: "Si alguien me hubiera dicho que me iba a enamorar así de rápido, no lo habría creído. Llegaste tú y rompiste todas mis reglas y planes. Qué hermoso desorden causaste. <3",
+                texto: "Si alguien me hubiera dicho que me iba a enamorar así de rápido, no lo habría creído. Llegaste tú y rompiste todas mis reglas y planes. Qué hermoso desorden causaste. 🥰",
                 foto: "foto4.jpg", 
                 top: "23%", 
                 left: "68%",
